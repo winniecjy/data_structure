@@ -56,8 +56,10 @@ void BinarySearchTree::remove_node(const int value){
 	if(sub_root==NULL || sub_root->data == value) return;
 	while(sub_root!=NULL && sub_root->data != value){
 		parentNode = sub_root;
-		if(sub_root->data > value) 
+		if(sub_root->data > value){
 			sub_root = sub_root->left;
+			isLeft = true;
+		} 			
 		else if(sub_root->data < value){
 			sub_root = sub_root->right;
 			isLeft = false;
